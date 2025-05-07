@@ -20,12 +20,13 @@ struct FeedCell: View {
         ZStack {
             // Video player
             ZStack {
-                Color.black
+                CustomVideoPlayer(
+                    player: AVPlayer(url: URL(string: post.videoUrl)!))
                 
-                if let player = player {
-                    VideoPlayer(player: player)
-                        .disabled(true) // Disable player controls
-                }
+//                if let player = player {
+//                    VideoPlayer(player: player)
+//                        .disabled(true) // Disable player controls
+//                }
                 
                 // Play/pause indicator
                 if isPaused {
